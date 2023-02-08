@@ -33,21 +33,16 @@ const findElement = (arr, val) => {
     max = arr.length - 1,
     //Compute the "middle" as the average of min and max, rounded down (so that it is an integer)
     middle = Math.floor((min + max) / 2);
-  //while the middle is not equal to the value (while we have not found the value)
-  //and min is less than or equal to max (while we have not reached the end of the array)
-  //run the while loop
+  //while the middle is not equal to the value (while we have not found the value)and min is less than or equal to max (while we have not reached the end of the array) run the while loop
   while (arr[middle] !== val && min <= max) {
-    //If the target val is lower than the middle,
-    //set the max to the middle - 1 so that we can search the lower half of the array
+    //If the target val is lower than the middle, set the max to the middle - 1 so that we can search the lower half of the array
     if (val < arr[middle]) max = middle - 1;
-    //If the target val is higher than the middle,
-    //set the min to the middle + 1 so that we can search the upper half of the array
+    //If the target val is higher than the middle, set the min to the middle + 1 so that we can search the upper half of the array
     else min = middle + 1;
     //Compute the middle again based on the new values of min and max
     middle = Math.floor((min + max) / 2);
   }
-  //If the middle is not equal to the target value,
-  //return -1 to signal that it is NOT in the array
+  //If the middle is not equal to the target value, return -1 to signal that it is NOT in the array
   if (arr[middle] !== val) return -1;
   //If array[middle] equals the target value, then stop. You found it! Return middle.
   return middle;
