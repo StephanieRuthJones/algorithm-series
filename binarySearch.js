@@ -29,10 +29,10 @@
 
 const findElement = (arr, val) => {
   //set min to 0 and max to n-1 (array length - 1)
-  let min = 0;
-  let max = arr.length - 1;
-  //Compute the "middle" as the average of min and max, rounded down (so that it is an integer)
-  let middle = Math.floor((min + max) / 2);
+  let min = 0,
+    max = arr.length - 1,
+    //Compute the "middle" as the average of min and max, rounded down (so that it is an integer)
+    middle = Math.floor((min + max) / 2);
   //while the middle is not equal to the value (while we have not found the value)
   //and min is less than or equal to max (while we have not reached the end of the array)
   //run the while loop
@@ -57,35 +57,40 @@ console.log(findElement([1, 2, 3, 4, 5], 2)); //1
 console.log(findElement([1, 2, 3, 4, 5], 5)); //4
 console.log(findElement([1, 2, 3, 4, 5], 6)); //-1
 
-//PROBLEM 2 - binary search + recursion
-//Use binary search with recursion to find an element's index with a given value in an array.
+//PROBLEM 2 - binary search
+//Use binary search to find the number of occurrences of a given value in a sorted array.
+//findOccurrences([1, 1, 2, 2, 2, 2, 3], 2); //Output: 4
+//findOccurrences([1, 1, 2, 2, 2, 2, 3], 3); //Output: 1
+//findOccurrences([1, 1, 2, 2, 2, 2, 3], 1); //Output: 2
 
-const cart = ["apple", "banana", "grape", "orange", "pear", "pineapple"]; //alphabetically sorted array
-const findElementRecursively = (array, targetElement, start, end) => {
-  if (start > end) return -1; //item is not in array
-  //Find the middle index
-  let middle = Math.floor((start + end) / 2);
-  //If the middle element is the target element, return the middle element
-  if (array[middle] === targetElement) return middle;
-  //If the middle element is greater than the target element,
-  //then call the function again, but subtract 1 from the middle element
-  console.log("middle, array[middle]", middle, array[middle]);
-  console.log("targetElement", targetElement);
-  if (array[middle] > targetElement) {
-    return findElementRecursively(array, targetElement, start, middle - 1);
+const findOccurrences = (array, targetValue) => {
+  let start = 0,
+    end = array.length - 1,
+    count = 0;
+  while (start <= end) {
+    let middle = Math.floor((start + end) / 2);
+    if (array[middle] === targetValue) {
+      let left = middle - 1,
+        right = middle + 1;
+      while (left >= start && array[left] === targetValue) {
+        count++;
+        left--;
+      }
+      while (right <= end && array[right] === targetValue) {
+        count++;
+        right++;
+      }
+      return count + 1;
+    } else if (array[middle] < targetValue) {
+      start = middle + 1;
+    } else {
+      end = middle - 1;
+    }
   }
-  return findElementRecursively(array, targetElement, middle + 1, end);
+  return 0;
 };
 
-console.log(findElementRecursively(cart, "orange", 0, cart.length - 1)); //3
-console.log(findElementRecursively(cart, "pineapple", 0, cart.length - 1)); //5
-console.log(findElementRecursively(cart, "apple", 0, cart.length - 1)); //0
-console.log(findElementRecursively(cart, "kiwi", 0, cart.length - 1)); //-1
-
-console.log("this is the final console log orange > grape", "orange" > "grape");
-// EXPLANATION: In JavaScript, comparison operators use
-//"lexicographical order" to compare two strings.
-//When strings are compared, the first character of each string is looked at and compared.
-//If the first character from each string is the same, then the second character from each string is compared, and so on.
-// In this case, "orange" starts with an "o" which comes after "g" in the alphabet,
-//so "orange" is considered to be greater than "grape" and the comparison operator returns true.
+console.log(findOccurrences([1, 1, 2, 2, 2, 2, 3], 2)); //Output: 4
+console.log(findOccurrences([1, 1, 2, 2, 2, 2, 3], 3)); //Output: 1
+console.log(findOccurrences([1, 1, 2, 2, 2, 2, 3], 1)); //Output: 2
+console.log(findOccurrences([1, 1, 2, 2, 2, 2, 3], 5)); //Output: 0
