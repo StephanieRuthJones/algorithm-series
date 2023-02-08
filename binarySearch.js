@@ -13,12 +13,9 @@ console.log(findElement([1, 2, 3, 4, 5], 5)); //4
 console.log(findElement([1, 2, 3, 4, 5], 6)); //-1
 
 //PROBLEM 2 - binary search + recursion
-//Use binary search with recursion to find an element's index with a given value in a sorted array of strings.
+//Use binary search to find the number of occurrences of a given value in a sorted array.
+//findOccurrences([1, 1, 2, 2, 2, 2, 3], 2); //Output: 4
+//findOccurrences([1, 1, 2, 2, 2, 2, 3], 3); //Output: 1
+//findOccurrences([1, 1, 2, 2, 2, 2, 3], 1); //Output: 2
 
-const cart = ["apple", "banana", "grape", "orange", "pear", "pineapple"]; //alphabetically sorted array
-const findElementRecursively = (array, targetElement, start, end) => {};
-
-console.log(findElementRecursively(cart, "orange", 0, cart.length - 1)); //3
-console.log(findElementRecursively(cart, "pineapple", 0, cart.length - 1)); //5
-console.log(findElementRecursively(cart, "apple", 0, cart.length - 1)); //0
-console.log(findElementRecursively(cart, "kiwi", 0, cart.length - 1)); //-1
+const findOccurrences = (arr, val) => {};
