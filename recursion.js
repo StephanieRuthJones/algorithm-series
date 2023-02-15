@@ -12,19 +12,33 @@ const factorial = (n) => {
   return result;
 };
 console.log(factorial(4));
+console.log(factorial(4)); //24
+console.log(factorial(0)); //1
+console.log(factorial(2)); //2
+console.log(factorial(5)); //120
 //Write a recursive function in JavaScript called recursiveFactorial() that takes a number, n, as a parameter and returns the factorial of that number.
-
+// If the user enters the number 0, the program will return 1.
+// If the user enters a number greater than 0, the program will recursively call itself by decreasing the number.
+// This process continues until the number becomes 1. Then when the number reaches 0, 1 is returned.
 // Recursive solution:
 
-function recursiveFactorial(n) {
-  // base case
-  if (n === 1) {
+function recursiveFactorial(num) {
+  //if number is 0
+  if (num === 0) {
+    //return 1
     return 1;
   }
-  // recursive case
-  return n * factorial(n - 1);
+  //if the number is positive
+  else {
+    //return the number multiplied by the factorial of the number minus 1
+    return num * recursiveFactorial(num - 1);
+  }
 }
-console.log(recursiveFactorial(4));
+console.log(recursiveFactorial(4)); //24
+console.log(recursiveFactorial(0)); //1
+console.log(recursiveFactorial(2)); //2
+console.log(recursiveFactorial(5)); //120
+
 // Explanation: The function takes a number, n, as a parameter and checks if n is equal to 1.
 //If it is, the recursive function returns 1.
 //If it isn't, the recursive case returns n multiplied by the factorial of n minus 1.
