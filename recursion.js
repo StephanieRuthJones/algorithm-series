@@ -43,3 +43,10 @@ console.log(sumNums([1, 2, 3, 4, 5, 6, 7])); //28
 console.log(sumNums([1, 2, 3, 4, 5, 6, 7, 8])); //36
 console.log(sumNums([0, 0, 0, 0, 0, 0, 0, 0])); //0
 console.log(sumNums([])); //0
+
+//Write a recursive function largestNum() that takes in an array of numbers and returns the largest number in the array.
+
+const largestNum = (array) => {};
+console.log(largestNum([1, 2, 3, 4, 5])); //5
+console.log(largestNum([1, 2, 3, 4, 5, 6])); //6
+console.log(largestNum([1, 2, 7, 4, 5, 6, 5])); //7
