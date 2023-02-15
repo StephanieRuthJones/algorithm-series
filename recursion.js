@@ -108,3 +108,22 @@ console.log(isPalindrome("buddy")); //false
 // Otherwise, compare the first and last letters of the string.
 // If the first and last letters differ, then the string is not a palindrome.
 // Otherwise, the first and last letters are the same. Strip them from the string, and determine whether the string that remains is a palindrome. Take the answer for this smaller string and use it as the answer for the original string.
+
+// Write a recursive function that takes in an array of numbers and returns the sum of all the numbers in the array.
+
+function sumArray(arr) {
+  // Base case
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  // Recursive call
+  return arr[0] + sumArray(arr.slice(1));
+}
+
+// Explanation: This function takes an array of numbers as an argument and returns the sum of all the numbers
+//in the array.The base case is when the length of the array is 0,
+//in which case we know the sum is 0. If the length of the array is greater than 0,
+//we add the first element of the array to the result of a recursive call of the same function
+//but with the inner portion of the array(the slice method is used to cut off the first element).
+//The result of the recursive call will be the sum of the rest of the elements in the array.
