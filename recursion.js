@@ -111,15 +111,22 @@ console.log(isPalindrome("buddy")); //false
 
 // Write a recursive function that takes in an array of numbers and returns the sum of all the numbers in the array.
 
-function sumArray(arr) {
-  // Base case
-  if (arr.length === 0) {
+function sumNums(array) {
+  // Base case - if there are no items in the array, return 0
+  if (!array.length) {
     return 0;
   }
 
-  // Recursive call
-  return arr[0] + sumArray(arr.slice(1));
+  // Recursive call - return the first item in the array plus the sum of the rest of the array;
+  //remove the first item from the array
+  return array[0] + sumNums(array.slice(1));
 }
+console.log(sumNums([1, 2, 3, 4, 5])); //15
+console.log(sumNums([1, 2, 3, 4, 5, 6])); //21
+console.log(sumNums([1, 2, 3, 4, 5, 6, 7])); //28
+console.log(sumNums([1, 2, 3, 4, 5, 6, 7, 8])); //36
+console.log(sumNums([0, 0, 0, 0, 0, 0, 0, 0])); //0
+console.log(sumNums([])); //0
 
 // Explanation: This function takes an array of numbers as an argument and returns the sum of all the numbers
 //in the array.The base case is when the length of the array is 0,
