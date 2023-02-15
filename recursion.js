@@ -33,3 +33,13 @@ console.log(isPalindrome("motor")); //false
 console.log(isPalindrome("racecar")); //true
 console.log(isPalindrome("madam")); //true
 console.log(isPalindrome("buddy")); //false
+
+// Write a recursive function that takes in an array of numbers and returns the sum of all the numbers in the array.
+
+function sumNums(array) {}
+console.log(sumNums([1, 2, 3, 4, 5])); //15
+console.log(sumNums([1, 2, 3, 4, 5, 6])); //21
+console.log(sumNums([1, 2, 3, 4, 5, 6, 7])); //28
+console.log(sumNums([1, 2, 3, 4, 5, 6, 7, 8])); //36
+console.log(sumNums([0, 0, 0, 0, 0, 0, 0, 0])); //0
+console.log(sumNums([])); //0
