@@ -38,6 +38,7 @@ console.log(recursiveFactorial(4)); //24
 console.log(recursiveFactorial(0)); //1
 console.log(recursiveFactorial(2)); //2
 console.log(recursiveFactorial(5)); //120
+console.log(recursiveFactorial(3)); //6
 
 // Explanation: The function takes a number, n, as a parameter and checks if n is equal to 1.
 //If it is, the recursive function returns 1.
@@ -63,3 +64,47 @@ console.log(recursiveFactorial(5)); //120
 // If n = 0, then declare that n! = 1.
 // Otherwise, n must be positive. Solve the subproblem of computing (n−1)!, multiply this result by n, and declare n! equal to the result of this product.
 // When we're computing n! in this way, we call the first case, where we immediately know the answer, the base case, and we call the second case, where we have to compute the same function but on a different value, the recursive case.
+
+//A palindrome is a word that is spelled the same forward and backward. Any string that contains NO letters or one letter is a palendrome.
+//For example, rotor and redder are palindromes, but motor is not.
+//Write a recursive function in JavaScript called isPalindrome() that takes a string, s,
+//as a parameter and returns true if s is a palindrome and false otherwise.
+
+// Base case #1
+
+// Start by implementing the first base case: if the length of the string is 0 or 1, isPalindrome() should return true.
+
+// Base case #2
+
+// If the first and last characters of the string are different, then we know immediately that the string is not a palindrome.
+
+// Recursive case
+
+// Finally, write the recursive case. Remove the first and last characters from the string and call isPalindrome function with the remaining string.
+
+const isPalindrome = (s) => {
+  //if the length of the string is 0 or 1, isPalindrome() should return true.
+  if (s.length === 0 || s.length === 1) {
+    return true;
+  }
+  //If the first and last characters of the string are different,
+  //then we know immediately that the string is not a palindrome.
+  //Remove the first and last characters from the string and call isPalindrome function with the remaining string.
+  if (s[0] === s[s.length - 1]) {
+    return isPalindrome(s.slice(1, s.length - 1));
+  }
+  return false;
+};
+console.log(isPalindrome("rotor")); //true
+console.log(isPalindrome("redder")); //true
+console.log(isPalindrome("motor")); //false
+console.log(isPalindrome("racecar")); //true
+console.log(isPalindrome("madam")); //true
+console.log(isPalindrome("buddy")); //false
+
+// How would we describe that in pseudocode?
+
+// If the string is made of no letters or just one letter, then it is a palindrome.
+// Otherwise, compare the first and last letters of the string.
+// If the first and last letters differ, then the string is not a palindrome.
+// Otherwise, the first and last letters are the same. Strip them from the string, and determine whether the string that remains is a palindrome. Take the answer for this smaller string and use it as the answer for the original string.
