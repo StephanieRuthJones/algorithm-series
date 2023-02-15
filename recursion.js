@@ -1,0 +1,23 @@
+// Explanation: Factorials are a mathematical operation that
+//multiplies a number by each of the numbers below it, down to 1.
+//For example: 4! = 4 x 3 x 2 x 1 = 24.
+
+//Write an iterative function in JavaScript called factorial() that takes a number, n, as a parameter and returns the factorial of that number.
+
+const factorial = (n) => {};
+console.log(factorial(4));
+console.log(factorial(4)); //24
+console.log(factorial(0)); //1
+console.log(factorial(2)); //2
+console.log(factorial(5)); //120
+//Write a recursive function in JavaScript called recursiveFactorial() that takes a number, n, as a parameter and returns the factorial of that number.
+// If the user enters the number 0, the program will return 1.
+// If the user enters a number greater than 0, the program will recursively call itself by decreasing the number.
+// This process continues until the number becomes 1. Then when the number reaches 0, 1 is returned.
+// Recursive solution:
+
+function recursiveFactorial(num) {}
+console.log(recursiveFactorial(4)); //24
+console.log(recursiveFactorial(0)); //1
+console.log(recursiveFactorial(2)); //2
+console.log(recursiveFactorial(5)); //120
