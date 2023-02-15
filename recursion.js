@@ -86,19 +86,6 @@ console.log(recursiveFactorial(3)); //6
 //For example, rotor and redder are palindromes, but motor is not.
 //Write a recursive function in JavaScript called isPalindrome() that takes a string, s,
 //as a parameter and returns true if s is a palindrome and false otherwise.
-
-// Base case #1
-
-// Start by implementing the first base case: if the length of the string is 0 or 1, isPalindrome() should return true.
-
-// Base case #2
-
-// If the first and last characters of the string are different, then we know immediately that the string is not a palindrome.
-
-// Recursive case
-
-// Finally, write the recursive case. Remove the first and last characters from the string and call isPalindrome function with the remaining string.
-
 const isPalindrome = (s) => {
   //if the length of the string is 0 or 1, isPalindrome() should return true.
   if (s.length === 0 || s.length === 1) {
