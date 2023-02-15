@@ -3,9 +3,15 @@
 //For example: 4! = 4 x 3 x 2 x 1 = 24.
 
 //Write an iterative function in JavaScript called factorial() that takes a number, n, as a parameter and returns the factorial of that number.
+//5 => 5*4*2*3*1
+const factorial = (n) => {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+};
 
-const factorial = (n) => {};
-console.log(factorial(4));
 console.log(factorial(4)); //24
 console.log(factorial(0)); //1
 console.log(factorial(2)); //2
@@ -17,22 +23,31 @@ console.log(factorial(5)); //120
 // Recursive solution:
 
 function recursiveFactorial(num) {}
+
 console.log(recursiveFactorial(4)); //24
 console.log(recursiveFactorial(0)); //1
 console.log(recursiveFactorial(2)); //2
 console.log(recursiveFactorial(5)); //120
 
-//A palindrome is a word that is spelled the same forward and backward. Any string that contains NO letters or one letter is a palendrome.
+//A palindrome is a word that is spelled the same forward and backward.
+//Any string that contains NO letters or one letter is a palendrome.
 //For example, rotor and redder are palindromes, but motor is not.
 //Write a recursive function in JavaScript called isPalindrome() that takes a string, s,
 //as a parameter and returns true if s is a palindrome and false otherwise.
-const isPalindrome = (s) => {};
+const isPalindrome = (string) => {};
+
+//1 - rotor => call with oto
+//2 - oto => call with t
+//3 - true
+
 console.log(isPalindrome("rotor")); //true
 console.log(isPalindrome("redder")); //true
 console.log(isPalindrome("motor")); //false
 console.log(isPalindrome("racecar")); //true
 console.log(isPalindrome("madam")); //true
 console.log(isPalindrome("buddy")); //false
+console.log(isPalindrome("")); //true
+console.log(isPalindrome("a")); //true
 
 // Write a recursive function that takes in an array of numbers and returns the sum of all the numbers in the array.
 
