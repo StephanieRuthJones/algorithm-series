@@ -16,6 +16,23 @@ console.log(factorial(4)); //24
 console.log(factorial(0)); //1
 console.log(factorial(2)); //2
 console.log(factorial(5)); //120
+
+//WHILE LOOP:
+
+function factorial(num) { 
+    // We define a variable to hold the result 
+    let result = 1; 
+    // We create a while loop that will continue until the number is less than or equal to 1 
+    while (num > 1) { 
+        // We multiply the result by the number and assign it to the result 
+        result *= num; 
+        // Then we decrement the number 
+        num--; 
+    } 
+    // Finally, we return the result 
+    return result; 
+} 
+
 //Write a recursive function in JavaScript called recursiveFactorial() that takes a number, n, as a parameter and returns the factorial of that number.
 // If the user enters the number 0, the program will return 1.
 // If the user enters a number greater than 0, the program will recursively call itself by decreasing the number.
