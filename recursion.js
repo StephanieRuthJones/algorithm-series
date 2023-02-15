@@ -21,3 +21,15 @@ console.log(recursiveFactorial(4)); //24
 console.log(recursiveFactorial(0)); //1
 console.log(recursiveFactorial(2)); //2
 console.log(recursiveFactorial(5)); //120
+
+//A palindrome is a word that is spelled the same forward and backward. Any string that contains NO letters or one letter is a palendrome.
+//For example, rotor and redder are palindromes, but motor is not.
+//Write a recursive function in JavaScript called isPalindrome() that takes a string, s,
+//as a parameter and returns true if s is a palindrome and false otherwise.
+const isPalindrome = (s) => {};
+console.log(isPalindrome("rotor")); //true
+console.log(isPalindrome("redder")); //true
+console.log(isPalindrome("motor")); //false
+console.log(isPalindrome("racecar")); //true
+console.log(isPalindrome("madam")); //true
+console.log(isPalindrome("buddy")); //false
