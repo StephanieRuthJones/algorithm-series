@@ -134,3 +134,51 @@ console.log(sumNums([])); //0
 //we add the first element of the array to the result of a recursive call of the same function
 //but with the inner portion of the array(the slice method is used to cut off the first element).
 //The result of the recursive call will be the sum of the rest of the elements in the array.
+
+//Write a recursive function largestNum() that takes in an array of numbers and returns the largest number in the array.
+
+const largestNum = (array) => {
+  // Base case - if there is only one item in the array, return that item
+  if (array.length === 1) {
+    return array[0];
+  }
+
+  // Recursive call - return the first item in the array plus the sum of the rest of the array;
+  let largest = largestNum(array.slice(1));
+  //compare the first element of the array to the result of a recursive call of the same function
+  return array[0] > largest ? array[0] : largest;
+};
+
+console.log(largestNum([1, 2, 3, 4, 5])); //5
+console.log(largestNum([1, 2, 3, 7, 5, 6])); //7
+console.log(largestNum([1, 2, 1, 2, 4, 4, 1, 3])); //4
+// Explanation: This function takes an array of numbers as an argument and returns the largest number in the array.
+//The base case is when the length of the array is 1,
+//in which case we know the largest number is the only element of the array.
+//If the length of the array is greater than 1,
+//we compare the first element of the array to the result of a recursive call of the same function
+//but with the inner portion of the array(the slice method is used to cut off the first element).
+
+// SOLUTION 2
+const largestNum2 = (arr) => {
+  if (arr.length == 1) {
+    return arr[0];
+  }
+
+  let max = largestNum(arr.slice(1));
+  if (arr[0] > max) {
+    return arr[0];
+  } else {
+    return max;
+  }
+};
+console.log(largestNum([1, 2, 3, 4, 5])); //5
+console.log(largestNum([1, 2, 3, 7, 5, 6])); //7
+console.log(largestNum([1, 2, 1, 2, 4, 4, 1, 3])); //4
+
+// The largestNum() function takes an unsorted array of numbers as an argument.
+//It then checks if the length of the array is 1, in which case it returns the first element of the array.
+//If the length of the array is greater than 1, the function recursively calls itself, slicing off the first element of the array.
+//It then checks if the first element of the array is greater than the maximum value that is returned from the recursive call.
+//If the first element is greater, it is returned as the maximum value.
+//However, if the first element is not greater than the maximum value that is returned from the recursive call, the maximum value is returned.This process is repeated until the largest number in the array is found.
