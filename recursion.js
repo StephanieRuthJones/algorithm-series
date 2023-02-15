@@ -48,5 +48,5 @@ console.log(sumNums([])); //0
 
 const largestNum = (array) => {};
 console.log(largestNum([1, 2, 3, 4, 5])); //5
-console.log(largestNum([1, 2, 3, 4, 5, 6])); //6
-console.log(largestNum([1, 2, 7, 4, 5, 6, 5])); //7
+console.log(largestNum([1, 2, 3, 7, 5, 6])); //7
+console.log(largestNum([1, 2, 1, 2, 4, 4, 1, 3])); //4
